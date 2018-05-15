@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="header">
+    <h1><%= @task.title %></h1>
+    <div class="alert alert-dark">
+      <i class="fas fa-edit"></i><span><%= link_to "Edit this task", edit_task_path %></span>
+    </div>
+  </div>
+  <div class="task-description">
+    <p class="alert alert-secondary" role="alert"><%= @task.details %></p>
+    <% if @task.completed? %>
+      <div><i class="far fa-check-square"></i><span>This task is complete</span></div>
+    <% else %>
+      <div><i class="far fa-square"></i><span>This task has not been completed yet</span></div>
+    <% end %>
+  </div>
+  <div class="border-top">
+    <div class="back-link">
+      <i class="fas fa-redo"></i><span><%= link_to "Back to list", tasks_path %></span>
+    </div>
+  </div>
+</div>
